@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0B0F19"
+    android:fitsSystemWindows="true">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/chatHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:background="@drawable/bg_header_glass"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_centerVertical="true"
+            android:text="←"
+            android:textColor="#00E5FF"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/avatarIcon"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_toEndOf="@id/btnBack"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/bg_avatar_ai_small"
+            android:text="🤖"
+            android:textSize="18sp"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/avatarIcon"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kavach AI"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Powered by Gemma • 100% Offline"
+                android:textColor="#8A95A5"
+                android:textSize="11sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="● OFFLINE"
+            android:textColor="#00C853"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:background="@drawable/glass_bg_pill"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"/>
+
+    </RelativeLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1A2035"/>
+
+    <!-- Chat RecyclerView — fills all remaining space -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:clipToPadding="false"
+        android:fadeScrollbars="true"/>
+
+    <!-- AI Typing Indicator -->
+    <TextView
+        android:id="@+id/tvTypingIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="2dp"
+        android:text="  Kavach AI soch raha hai..."
+        android:textColor="#00E5FF"
+        android:textSize="12sp"
+        android:alpha="0.75"
+        android:visibility="gone"/>
+
+    <!-- Live Typing Preview -->
+    <TextView
+        android:id="@+id/tvLiveTypingPreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="2dp"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_live_preview"
+        android:textColor="#AACCFF"
+        android:textSize="13sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:visibility="gone"/>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1A2035"/>
+
+    <!-- Input Area — sticks to bottom, rises with keyboard -->
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="#0F1420"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/etMessageInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_glass_bg"
+            android:hint="Kuch bhi poochho..."
+            android:textColorHint="#44AAAACC"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="11dp"
+            android:paddingBottom="11dp"
+            android:maxLines="4"
+            android:inputType="textMultiLine|textCapSentences"
+            android:imeOptions="actionNone"/>
+
+        <!-- Mic: visible when input empty -->
+        <ImageButton
+            android:id="@+id/btnVoiceInput"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_send_btn"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:scaleType="center"
+            app:tint="#00E5FF"
+            android:contentDescription="Voice input"
+            android:visibility="visible"/>
+
+        <!-- Send: visible when typing -->
+        <ImageButton
+            android:id="@+id/btnSendMessage"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_send_btn"
+            android:src="@android:drawable/ic_menu_send"
+            android:scaleType="center"
+            app:tint="#00E5FF"
+            android:contentDescription="Send"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</LinearLayout>

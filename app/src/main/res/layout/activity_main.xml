@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#F4F6F9">
+
+    <RelativeLayout
+        android:id="@+id/mainHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="15dp"
+        android:elevation="2dp">
+        <TextView
+            android:id="@+id/tvAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OMNI-KAVACH-360"
+            android:textColor="#0056D2"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.02"
+            android:layout_centerVertical="true"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/btnThemeToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌙"
+                android:textSize="22sp"
+                android:layout_marginEnd="15dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SECURE"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:backgroundTint="#0056D2"
+                android:background="@drawable/glass_bg_pill"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="6dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/mainHeader"
+        android:layout_above="@id/bottomNav">
+
+        <ScrollView
+            android:id="@+id/view_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="100dp"
+            android:scrollbars="none">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="30dp">
+                    <androidx.cardview.widget.CardView android:id="@+id/cardStat1" android:layout_width="0dp" android:layout_weight="1" android:layout_height="95dp" android:layout_marginEnd="10dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="2dp" android:tag="theme_card">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚙️" android:textSize="22sp"/>
+                            <TextView android:id="@+id/tvActiveModuleCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="#1C2A3A" android:textSize="22sp" android:textStyle="bold" android:layout_marginTop="2dp" android:tag="theme_text_main"/>
+                            <TextView android:id="@+id/tvSubStat1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ACTIVE MODULES" android:textColor="#8798AD" android:textSize="10sp" android:tag="theme_text_sub"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView android:id="@+id/cardStat2" android:layout_width="0dp" android:layout_weight="1" android:layout_height="95dp" android:layout_marginStart="10dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="2dp" android:tag="theme_card" android:clickable="true" android:focusable="true">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚡" android:textSize="22sp"/>
+                            <TextView android:id="@+id/tvReady" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ready" android:textColor="#00C853" android:textSize="22sp" android:textStyle="bold" android:layout_marginTop="2dp"/>
+                            <TextView android:id="@+id/tvSubStat2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TRIGGER STATUS" android:textColor="#8798AD" android:textSize="10sp" android:tag="theme_text_sub"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <TextView android:id="@+id/lblCore" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CORE INTELLIGENCE" android:textColor="#8798AD" android:textSize="12sp" android:textStyle="bold" android:layout_marginBottom="12dp" android:letterSpacing="0.05" android:tag="theme_text_sub"/>
+
+                <androidx.cardview.widget.CardView android:id="@+id/cardCyberShieldBg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="2dp" android:tag="theme_card">
+                    <LinearLayout android:id="@+id/cardCyberShield" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20dp" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <androidx.cardview.widget.CardView android:id="@+id/iconBg1" android:layout_width="45dp" android:layout_height="45dp" app:cardBackgroundColor="#F4F6F9" app:cardCornerRadius="12dp" app:cardElevation="0dp" android:layout_marginEnd="15dp" android:tag="theme_icon_bg"><TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="📸" android:textSize="22sp"/></androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:id="@+id/tvTitleCyber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cybershield" android:textColor="#1C2A3A" android:textSize="16sp" android:textStyle="bold" android:tag="theme_text_main"/>
+                            <TextView android:id="@+id/tvSubCyber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Physical Surveillance Scan." android:textColor="#8798AD" android:textSize="12sp" android:tag="theme_text_sub"/>
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textColor="#0056D2" android:textSize="18sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView android:id="@+id/cardSafetyMapBg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="30dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="2dp" android:tag="theme_card">
+                    <LinearLayout android:id="@+id/cardSafetyMap" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20dp" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <androidx.cardview.widget.CardView android:id="@+id/iconBg2" android:layout_width="45dp" android:layout_height="45dp" app:cardBackgroundColor="#F4F6F9" app:cardCornerRadius="12dp" app:cardElevation="0dp" android:layout_marginEnd="15dp" android:tag="theme_icon_bg"><TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="🗺️" android:textSize="22sp"/></androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:id="@+id/tvTitleMap" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Safety Genesis" android:textColor="#1C2A3A" android:textSize="16sp" android:textStyle="bold" android:tag="theme_text_main"/>
+                            <TextView android:id="@+id/tvSubMap" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Intelligence-Led Navigation." android:textColor="#8798AD" android:textSize="12sp" android:tag="theme_text_sub"/>
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textColor="#0056D2" android:textSize="18sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DEVICE SECURITY STATUS" android:textColor="#8798AD" android:textSize="12sp" android:textStyle="bold" android:layout_marginBottom="12dp" android:letterSpacing="0.05" android:tag="theme_text_sub"/>
+
+                <androidx.cardview.widget.CardView android:id="@+id/cardHealthBg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="2dp" android:tag="theme_card" android:clickable="true" android:focusable="true">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20dp" android:gravity="center_vertical">
+                        <androidx.cardview.widget.CardView android:layout_width="50dp" android:layout_height="50dp" app:cardBackgroundColor="#E8F5E9" app:cardCornerRadius="25dp" app:cardElevation="0dp" android:layout_marginEnd="15dp" android:tag="theme_icon_bg">
+                            <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="🛡️" android:textSize="24sp"/>
+                        </androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Excellent Health" android:textColor="#00C853" android:textSize="16sp" android:textStyle="bold"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tap to view recent Intruder/Face logs (24h)." android:textColor="#8798AD" android:textSize="12sp" android:tag="theme_text_sub" android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textColor="#0056D2" android:textSize="18sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView android:id="@+id/cardOfflineAiBg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="2dp" android:tag="theme_card" android:clickable="true" android:focusable="true">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20dp" android:gravity="center_vertical">
+                        <androidx.cardview.widget.CardView android:layout_width="50dp" android:layout_height="50dp" app:cardBackgroundColor="#E3F2FD" app:cardCornerRadius="25dp" app:cardElevation="0dp" android:layout_marginEnd="15dp" android:tag="theme_icon_bg">
+                            <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="🧠" android:textSize="24sp"/>
+                        </androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kavach Offline AI" android:textColor="#0056D2" android:textSize="16sp" android:textStyle="bold" android:tag="theme_text_main"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No internet? Ask Local AI for safety steps." android:textColor="#8798AD" android:textSize="12sp" android:tag="theme_text_sub" android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textColor="#0056D2" android:textSize="18sp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/view_modules"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:clipToPadding="false"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="100dp"
+            android:scrollbars="none">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+                <TextView android:id="@+id/lblProtocols" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ACTIVE SECURITY PROTOCOLS" android:textColor="#8798AD" android:textSize="12sp" android:textStyle="bold" android:layout_marginBottom="12dp" android:letterSpacing="0.05" android:tag="theme_text_sub"/>
+
+                <androidx.cardview.widget.CardView android:id="@+id/cardAegisBg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="2dp" android:tag="theme_card">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20dp" android:gravity="center_vertical">
+                        <androidx.cardview.widget.CardView android:id="@+id/iconBg3" android:layout_width="45dp" android:layout_height="45dp" app:cardBackgroundColor="#F4F6F9" app:cardCornerRadius="12dp" app:cardElevation="0dp" android:layout_marginEnd="15dp" android:tag="theme_icon_bg"><TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="🛡️" android:textSize="22sp"/></androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:id="@+id/tvTitleAegis" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Aegis Port Guard" android:textColor="#1C2A3A" android:textSize="16sp" android:textStyle="bold" android:tag="theme_text_main"/>
+                            <TextView android:id="@+id/tvSubAegis" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Anti-Juice Jacking Protection." android:textColor="#8798AD" android:textSize="12sp" android:tag="theme_text_sub"/>
+                        </LinearLayout>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchAegis" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" app:thumbTint="#FFFFFF"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView android:id="@+id/cardAIBg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="2dp" android:tag="theme_card">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20dp" android:gravity="center_vertical">
+                        <androidx.cardview.widget.CardView android:id="@+id/iconBg4" android:layout_width="45dp" android:layout_height="45dp" app:cardBackgroundColor="#F4F6F9" app:cardCornerRadius="12dp" app:cardElevation="0dp" android:layout_marginEnd="15dp" android:tag="theme_icon_bg"><TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="💠" android:textSize="22sp"/></androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:id="@+id/tvTitleAI" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Omnikawach AI" android:textColor="#1C2A3A" android:textSize="16sp" android:textStyle="bold" android:tag="theme_text_main"/>
+                            <TextView android:id="@+id/tvSubAI" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Real-time Fraud Shield." android:textColor="#8798AD" android:textSize="12sp" android:tag="theme_text_sub"/>
+                        </LinearLayout>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchAI" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" app:thumbTint="#FFFFFF"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView android:id="@+id/cardNetBg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="2dp" android:tag="theme_card">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20dp" android:gravity="center_vertical">
+                        <androidx.cardview.widget.CardView android:id="@+id/iconBg5" android:layout_width="45dp" android:layout_height="45dp" app:cardBackgroundColor="#F4F6F9" app:cardCornerRadius="12dp" app:cardElevation="0dp" android:layout_marginEnd="15dp" android:tag="theme_icon_bg"><TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="📶" android:textSize="22sp"/></androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:id="@+id/tvTitleNet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Network Sentinel" android:textColor="#1C2A3A" android:textSize="16sp" android:textStyle="bold" android:tag="theme_text_main"/>
+                            <TextView android:id="@+id/tvSubNet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Block malicious Wi-Fi packets." android:textColor="#8798AD" android:textSize="12sp" android:tag="theme_text_sub"/>
+                        </LinearLayout>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchNetwork" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" app:thumbTint="#FFFFFF"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView android:id="@+id/cardSelfieBg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="2dp" android:tag="theme_card">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20dp" android:gravity="center_vertical">
+                        <androidx.cardview.widget.CardView android:id="@+id/iconBg6" android:layout_width="45dp" android:layout_height="45dp" app:cardBackgroundColor="#F4F6F9" app:cardCornerRadius="12dp" app:cardElevation="0dp" android:layout_marginEnd="15dp" android:tag="theme_icon_bg"><TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="🥷" android:textSize="22sp"/></androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:id="@+id/tvTitleSelfie" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Intruder Selfie" android:textColor="#1C2A3A" android:textSize="16sp" android:textStyle="bold" android:tag="theme_text_main"/>
+                            <TextView android:id="@+id/tvSubSelfie" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Capture front-camera photo." android:textColor="#8798AD" android:textSize="12sp" android:tag="theme_text_sub"/>
+                        </LinearLayout>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchSelfie" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" app:thumbTint="#FFFFFF"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView android:id="@+id/cardShakeBg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="2dp" android:tag="theme_card">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20dp" android:gravity="center_vertical">
+                        <androidx.cardview.widget.CardView android:id="@+id/iconBg7" android:layout_width="45dp" android:layout_height="45dp" app:cardBackgroundColor="#F4F6F9" app:cardCornerRadius="12dp" app:cardElevation="0dp" android:layout_marginEnd="15dp" android:tag="theme_icon_bg"><TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="📳" android:textSize="22sp"/></androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:id="@+id/tvTitleShake" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Shake to SOS" android:textColor="#1C2A3A" android:textSize="16sp" android:textStyle="bold" android:tag="theme_text_main"/>
+                            <TextView android:id="@+id/tvShakeStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rapidly shake device for alarm." android:textColor="#8798AD" android:textSize="12sp" android:tag="theme_text_sub"/>
+                        </LinearLayout>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/btnToggleShake" android:layout_width="wrap_content" android:layout_height="wrap_content" app:thumbTint="#FFFFFF"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView android:id="@+id/cardChronosBg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardBackgroundColor="#FFFFFF" app:cardCornerRadius="18dp" app:cardElevation="2dp" android:tag="theme_card">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="20dp" android:gravity="center_vertical">
+                        <androidx.cardview.widget.CardView android:layout_width="45dp" android:layout_height="45dp" app:cardBackgroundColor="#F4F6F9" app:cardCornerRadius="12dp" app:cardElevation="0dp" android:layout_marginEnd="15dp" android:tag="theme_icon_bg"><TextView android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:text="⏳" android:textSize="22sp"/></androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Chronos Protocol" android:textColor="#1C2A3A" android:textSize="16sp" android:textStyle="bold" android:tag="theme_text_main"/>
+                            <TextView android:id="@+id/tvSubChronos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dead-Man Switch. Off" android:textColor="#8798AD" android:textSize="12sp" android:tag="theme_text_sub"/>
+                        </LinearLayout>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchChronos" android:layout_width="wrap_content" android:layout_height="wrap_content" app:thumbTint="#FFFFFF"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/view_sos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:id="@+id/btnMainSOS"
+                android:layout_width="320dp"
+                android:layout_height="320dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="-80dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <androidx.cardview.widget.CardView android:id="@+id/sosPulseRing2" android:layout_width="160dp" android:layout_height="160dp" android:layout_gravity="center" app:cardCornerRadius="80dp" app:cardBackgroundColor="#26FF003C" app:cardElevation="0dp"/>
+                <androidx.cardview.widget.CardView android:id="@+id/sosPulseRing1" android:layout_width="160dp" android:layout_height="160dp" android:layout_gravity="center" app:cardCornerRadius="80dp" app:cardBackgroundColor="#4DFF003C" app:cardElevation="0dp"/>
+
+                <androidx.cardview.widget.CardView android:layout_width="160dp" android:layout_height="160dp" android:layout_gravity="center" app:cardCornerRadius="80dp" app:cardBackgroundColor="#FF003C" app:cardElevation="20dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📡" android:textColor="#FFFFFF" android:textSize="32sp" android:layout_marginBottom="5dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SOS" android:textColor="#FFFFFF" android:textSize="36sp" android:textStyle="bold" android:letterSpacing="0.05"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/sosInstructionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnMainSOS"
+                android:layout_marginTop="30dp"
+                android:text="GUARDIAN PULSE\nPress and hold for 2s to broadcast Live Location &amp; audio stealthily."
+                android:textAlignment="center"
+                android:textColor="#8798AD"
+                android:textSize="13sp"
+                android:letterSpacing="0.05"
+                android:paddingHorizontal="50dp"
+                android:tag="theme_text_sub"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sosGuardianCardBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginBottom="100dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="20dp"
+                android:tag="theme_card">
+
+                <LinearLayout
+                    android:id="@+id/btnCardAura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="15dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ACTIVE GUARDIANS" android:textColor="#8798AD" android:textSize="12sp" android:textStyle="bold" android:letterSpacing="0.1" android:tag="theme_text_sub"/>
+                        <TextView android:id="@+id/tvEditGuardians" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" android:text="EDIT" android:textColor="#00E5FF" android:textSize="13sp" android:textStyle="bold" android:clickable="true" android:focusable="true" android:paddingHorizontal="10dp"/>
+                    </RelativeLayout>
+
+                    <LinearLayout android:id="@+id/guardianInitialsContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:elevation="30dp"
+        android:orientation="horizontal">
+
+        <LinearLayout android:id="@+id/nav_system" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true">
+            <TextView android:id="@+id/ic_system" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛡️" android:textSize="24sp" android:alpha="1.0"/>
+            <TextView android:id="@+id/txt_system" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="System" android:textColor="#0056D2" android:textSize="12sp" android:textStyle="bold" android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_modules" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true">
+            <TextView android:id="@+id/ic_modules" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚙️" android:textSize="24sp" android:alpha="0.5"/>
+            <TextView android:id="@+id/txt_modules" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Modules" android:textColor="#8798AD" android:textSize="12sp" android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_sos" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true">
+            <TextView android:id="@+id/ic_sos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚠️" android:textSize="24sp" android:alpha="0.5"/>
+            <TextView android:id="@+id/txt_sos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Emergency" android:textColor="#8798AD" android:textSize="12sp" android:layout_marginTop="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/lockScreenOverlay" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#05080D" android:orientation="vertical" android:gravity="center" android:visibility="gone" android:elevation="100dp" android:clickable="true" android:focusable="true">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛡️" android:textSize="45sp" android:layout_marginBottom="10dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OMNI-KAVACH" android:textColor="#00E5FF" android:textSize="22sp" android:textStyle="bold" android:letterSpacing="0.1" android:layout_marginBottom="4dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ENCRYPTED TERMINAL" android:textColor="#00E5FF" android:textSize="10sp" android:textStyle="bold" android:letterSpacing="0.2" android:layout_marginBottom="25dp"/>
+
+        <LinearLayout android:id="@+id/faceScanUI" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:layout_marginBottom="20dp">
+            <TextView android:id="@+id/tvFaceIcon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="[ 🛡️ ]" android:textColor="#00E5FF" android:textSize="35sp"/>
+            <TextView android:id="@+id/tvFaceText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Biometric / PIN Required" android:textColor="#00E5FF" android:textSize="12sp" android:layout_marginTop="5dp" android:letterSpacing="0.1"/>
+        </LinearLayout>
+
+        <EditText android:id="@+id/pinInput" android:layout_width="250dp" android:layout_height="55dp" android:background="@drawable/edittext_glass_bg" android:hint="Enter Auth" android:textColorHint="#55FFFFFF" android:textColor="#FFFFFF" android:textSize="18sp" android:textAlignment="center" android:inputType="numberPassword" android:layout_marginBottom="20dp"/>
+        <Button android:id="@+id/btnSubmitPin" android:layout_width="250dp" android:layout_height="55dp" android:text="AUTHORIZE" android:textColor="#05080D" android:textStyle="bold" android:textSize="15sp" android:backgroundTint="#00E5FF" app:cornerRadius="12dp" android:layout_marginBottom="50dp"/>
+
+        <LinearLayout android:id="@+id/btnFingerprint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:clickable="true" android:focusable="true">
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:background="@drawable/circle_stroke_cyan"
+                android:padding="12dp"
+                android:src="@drawable/ic_fingerprint"
+                app:tint="#00E5FF"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout android:id="@+id/fakePowerScreen" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#000000" android:visibility="gone" android:elevation="105dp" android:clickable="true"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:text="Powering off..." android:textColor="#FFFFFF" android:textSize="18sp"/></RelativeLayout>
+
+    <RelativeLayout android:id="@+id/scamAlertScreen" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#D32F2F" android:visibility="gone" android:elevation="110dp" android:clickable="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" android:orientation="vertical" android:gravity="center">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚠️" android:textSize="80sp" android:layout_marginBottom="20dp"/>
+            <TextView android:id="@+id/tvAlertTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SCAM CALL BLOCKED" android:textColor="#FFFFFF" android:textSize="26sp" android:textStyle="bold" android:textAlignment="center"/>
+            <TextView android:id="@+id/tvAlertDesc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Deepfake / AI Voice Detected" android:textColor="#FFFFFF" android:textSize="15sp" android:layout_marginTop="8dp" android:layout_marginBottom="40dp" android:textAlignment="center"/>
+            <Button android:id="@+id/btnStopAlert" android:layout_width="200dp" android:layout_height="55dp" android:text="DISMISS ALERT" android:textColor="#D32F2F" android:backgroundTint="#FFFFFF" app:cornerRadius="25dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <SurfaceView android:id="@+id/hiddenCameraView" android:layout_width="1dp" android:layout_height="1dp" android:layout_alignParentTop="true" android:alpha="0.01" />
+    <TextView android:id="@+id/serverStatusText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone"/>
+    <TextView android:id="@+id/recordingStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone"/>
+
+</RelativeLayout>

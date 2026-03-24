@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <SurfaceView android:id="@+id/cameraPreview" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <View android:id="@+id/glareFilter" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#2600FF00" />
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center">
+        <View android:layout_width="40dp" android:layout_height="2dp" android:background="#8000F0FF" android:layout_centerInParent="true"/>
+        <View android:layout_width="2dp" android:layout_height="40dp" android:background="#8000F0FF" android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <TextView android:id="@+id/tvSpeedWarning" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚠️ MOTION BLUR DETECTED\nSlow Down Camera Movement" android:textColor="#FF2A2A" android:textSize="14sp" android:textStyle="bold" android:fontFamily="sans-serif-condensed" android:background="#E6000000" android:padding="15dp" android:layout_centerInParent="true" android:visibility="gone" android:elevation="10dp"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="#CC000000" android:padding="16dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView android:id="@+id/btnBack" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="◀ EXIT" android:textColor="#FF2A2A" android:textSize="16sp" android:textStyle="bold" android:fontFamily="monospace" android:paddingEnd="20dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OMNI-KAVACH HUD" android:textColor="#00FF88" android:textSize="18sp" android:textStyle="bold" android:fontFamily="sans-serif-condensed"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvTierMode" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="OPTIMIZING SYSTEM..." android:textColor="#A0A0B0" android:textSize="12sp" android:fontFamily="monospace" android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_above="@+id/consoleLayout" android:orientation="vertical" android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D9000000"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:elevation="5dp">
+
+            <TextView
+                android:id="@+id/tvMasterWarning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[ SYSTEM SECURE: NO THREATS ]"
+                android:textColor="#00F0FF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:textAlignment="center"
+                android:shadowColor="#00F0FF"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="15"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:background="#B3141416" android:padding="8dp" android:layout_marginEnd="4dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="EMF RADAR" android:textColor="#FFF" android:textSize="10sp" android:fontFamily="sans-serif-condensed"/>
+                <TextView android:id="@+id/tvEmf" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0.0 µT" android:textColor="#00FF88" android:textSize="16sp" android:textStyle="bold" android:fontFamily="monospace"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:background="#B3141416" android:padding="8dp" android:layout_marginStart="4dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AUDIO FFT" android:textColor="#FFF" android:textSize="10sp" android:fontFamily="sans-serif-condensed"/>
+                <TextView android:id="@+id/tvAudio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 Hz" android:textColor="#00FF88" android:textSize="16sp" android:textStyle="bold" android:fontFamily="monospace"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2" android:layout_marginTop="8dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:background="#B3141416" android:padding="8dp" android:layout_marginEnd="4dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BLE BUGS" android:textColor="#FFF" android:textSize="10sp" android:fontFamily="sans-serif-condensed"/>
+                <TextView android:id="@+id/tvBle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 DETECTED" android:textColor="#00BFFF" android:textSize="16sp" android:textStyle="bold" android:fontFamily="monospace"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:background="#B3141416" android:padding="8dp" android:layout_marginStart="4dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LAN PORT SCAN" android:textColor="#FFF" android:textSize="10sp" android:fontFamily="sans-serif-condensed"/>
+                <TextView android:id="@+id/tvLan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0/255" android:textColor="#FF9800" android:textSize="16sp" android:textStyle="bold" android:fontFamily="monospace"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/consoleLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:orientation="vertical" android:background="#E6141416" android:padding="16dp">
+
+        <Button android:id="@+id/btnGlintTest" android:layout_width="match_parent" android:layout_height="40dp" android:text="👁️ ACTIVATE GLINT TEST (STROBE)" android:textColor="#FFF" android:backgroundTint="#8A2BE2" android:textStyle="bold" android:fontFamily="sans-serif-condensed" android:layout_marginBottom="8dp"/>
+
+        <Button android:id="@+id/btnMasterScan" android:layout_width="match_parent" android:layout_height="45dp" android:text="INITIATE FULL OMNI-SCAN" android:textColor="#000" android:backgroundTint="#00FF88" android:textStyle="bold" android:fontFamily="sans-serif-condensed" android:layout_marginBottom="10dp"/>
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="100dp" android:background="#1A000000" android:padding="8dp">
+            <TextView android:id="@+id/tvConsoleLogs" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="> System Ready...\n" android:textColor="#00F0FF" android:fontFamily="monospace" android:textSize="11sp"/>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

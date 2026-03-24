@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="start"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="60dp">
+
+    <TextView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/bg_avatar_ai_small"
+        android:text="🤖"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:id="@+id/tvMessageAI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bubble_ai"
+        android:textColor="#E5E7F6"
+        android:textSize="15sp"
+        android:lineSpacingExtra="4dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:text="AI message here"/>
+</LinearLayout>
