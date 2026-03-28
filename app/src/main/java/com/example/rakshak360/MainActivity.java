@@ -108,10 +108,9 @@ import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
-
-    private final String TELEGRAM_TOKEN = "8778477026:AAHKJmVMZ_h39Z1UqjfdKlCCnXX0X9blLr8";
-    private final String CHAT_ID = "5074814349";
-
+//yha m telegram code lga skta hu baad m
+private final String TELEGRAM_TOKEN = "YOUR_TOKEN_HERE";
+private final String CHAT_ID = "YOUR_CHAT_ID";
     private static final OkHttpClient httpClient = new OkHttpClient.Builder().connectTimeout(15, TimeUnit.SECONDS).build();
     private static WebSocket webSocket;
     private static boolean isCallReceiverRegistered = false;
