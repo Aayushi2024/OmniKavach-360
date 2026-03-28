@@ -30,12 +30,13 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
-
-    kotlinOptions {
-        jvmTarget = "11"
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+        }
     }
 
     packaging {
@@ -59,14 +60,16 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation("androidx.biometric:biometric:1.2.0-alpha05")
     implementation("androidx.multidex:multidex:2.0.1")
-
+// RunAnywhere SDK
+    implementation("io.github.sanchitmonga22:runanywhere-sdk-android:0.20.6")
+    implementation("io.github.sanchitmonga22:runanywhere-llamacpp-android:0.20.6")
+    implementation("io.github.sanchitmonga22:runanywhere-onnx-android:0.20.6")
     // Kotlin & Coroutines
     implementation(libs.kotlin.stdlib)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
-    // ✅ FIXED — MediaPipe latest version (Android 15 compatible)
-    implementation("com.google.mediapipe:tasks-genai:0.10.22")
+
 
     // Voice Wake-Word Detection
     implementation("ai.picovoice:porcupine-android:3.0.3")
